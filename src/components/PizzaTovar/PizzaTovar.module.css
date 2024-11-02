@@ -1,0 +1,65 @@
+.pizzaBlockWrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.pizzaBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+}
+
+.imageAndTitleBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(238, 238, 238);
+  border-radius: 1vw;
+  padding: 30px 30px;
+  /* -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.imageBlock {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  border-radius: 1vw;
+}
+
+.titleBlock {
+  display: flex;
+  color: black;
+  font-family: MYRIADPRO-SEMIBOLD;
+  font-size: 22px;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.pizzaBlockSize {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pizzaBlockSizeList {
+  background-color: #f9f9f9;
+  padding: 13px 30px;
+  border-radius: 30px;
+  font-family: MYRIADPRO-SEMIBOLD;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+}
+
+.active {
+  background-color: orange;
+  color: white;
+}

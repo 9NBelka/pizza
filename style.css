@@ -1,0 +1,11 @@
+.container {
+  width: 1320px;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: MYRIADPRO-SEMIBOLD;
+  src: url('./src/font/MYRIADPRO-SEMIBOLD.OTF') format('truetype');
+}
