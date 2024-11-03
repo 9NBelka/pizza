@@ -1,44 +1,94 @@
+// PizzaTovar.js
 import css from './PizzaTovar.module.css';
+import plus from '../../assets/img/plus.svg';
 import pizzas from '../../pizza.json';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
-export function PizzaTovar() {
-  // Объект для хранения активного размера для каждой пиццы по её id
-  const [activeSizes, setActiveSizes] = useState({});
+/*
 
-  // Функция для установки активного размера для конкретной пиццы
+useSelector — хук для получения данных из store. Он позволяет подписываться на определенные части состояния.
+useDispatch — хук для отправки действий. С его помощью мы вызываем действия, которые обновляют состояние в store.
+
+*/
+
+export function PizzaTovar() {
+  const selectedCategory = useSelector((state) => state.filter.category);
+
+  /*
+  Подключаемся к выбранной категории через useSelector, чтобы фильтровать список пицц, отображаемых пользователю.
+  */
+
+  const initialSizes = pizzas.reduce((acc, pizza) => {
+    acc[pizza.id] = 0;
+    return acc;
+  }, {});
+  const [activeSizes, setActiveSizes] = useState(initialSizes);
+
+  const sizePriceAdditions = [0, 110]; // Цены для размеров пицц [26см, 40см]
+
   const handleSizeClick = (pizzaId, sizeIndex) => {
     setActiveSizes((prevSizes) => ({
       ...prevSizes,
-      [pizzaId]: sizeIndex, // Обновляем активный размер только для текущей пиццы
+      [pizzaId]: sizeIndex,
     }));
   };
+
+  // Фильтрация пицц по категории
+  const filteredPizzas = pizzas.filter((pizza) => {
+    // Если выбранная категория - "Все" (0), отображаем все пиццы
+    if (selectedCategory === 0) return true;
+    // Проверяем, есть ли выбранная категория в массиве category для каждой пиццы
+    return Array.isArray(pizza.category)
+      ? pizza.category.includes(selectedCategory)
+      : pizza.category === selectedCategory;
+  });
+
+  /*
+  1. Если selectedCategory не равен 0, проверяется, является ли pizza.category массивом (например, [0, 3] для пиццы, которая относится к нескольким категориям). Если это массив, используется .includes() для проверки, находится ли selectedCategory среди элементов массива pizza.category.
+  
+  2. Если pizza.category — не массив, а одно число, как 0 или 3, тогда проверка происходит через обычное сравнение (pizza.category === selectedCategory).
+  
+  */
 
   return (
     <div className={css.pizzaBlockWrapper}>
       <div className={css.pizzaBlock}>
-        {pizzas.map((pizza) => (
-          <div key={pizza.id} className={css.imageAndTitleBlock}>
-            <img className={css.imageBlock} src={pizza.imageUrl} alt={pizza.title} />
+        {filteredPizzas.map((pizza) => {
+          const selectedSizeIndex = activeSizes[pizza.id];
+          const priceAddition = sizePriceAdditions[selectedSizeIndex];
+          const finalPrice = pizza.price + priceAddition;
 
-            <ul className={css.pizzaBlockSize}>
-              {pizza.sizes.map((size, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleSizeClick(pizza.id, index)}
-                  className={clsx(
-                    css.pizzaBlockSizeList,
-                    activeSizes[pizza.id] === index && css.active, // Проверяем активный размер для этой пиццы
-                  )}>
-                  {size} см.
-                </li>
-              ))}
-            </ul>
+          return (
+            <div key={pizza.id} className={css.imageAndTitleBlock}>
+              <img className={css.imageBlock} src={pizza.imageUrl} alt={pizza.title} />
 
-            <h4 className={clsx(css.titleBlock)}>{pizza.title}</h4>
-          </div>
-        ))}
+              <ul className={css.pizzaBlockSize}>
+                {pizza.sizes.map((size, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleSizeClick(pizza.id, index)}
+                    className={clsx(
+                      css.pizzaBlockSizeList,
+                      activeSizes[pizza.id] === index && css.active,
+                    )}>
+                    {size} см.
+                  </li>
+                ))}
+              </ul>
+
+              <h4 className={clsx(css.titleBlock)}>{pizza.title}</h4>
+
+              <div className={css.priceAndButtonBlock}>
+                <p className={css.priceBlock}>{finalPrice} грн.</p>
+                <button className={css.buttonPlusInCard}>
+                  <img src={plus} alt='buttonPlus' />
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

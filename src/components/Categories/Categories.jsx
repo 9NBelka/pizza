@@ -1,11 +1,19 @@
 import clsx from 'clsx';
 import css from './Categories.module.css';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategory } from '../../redux/filterSlice';
 
 export function Categories() {
-  const [activeType, setActiveType] = useState(0); // Начальное состояние — первый элемент (например, "Все")
+  const dispatch = useDispatch();
+  const activeType = useSelector((state) => state.filter.category); // Доступ к текущему фильтру
 
-  const categories = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+  /*
+  
+  В компоненте Categories мы можем использовать useDispatch для отправки действия при выборе категории и useSelector для получения текущего фильтра.
+  
+  */
+
+  const categories = ['Все', 'Мясные', 'Без Мяса', 'с морепродуктами', 'Острые', 'Конструктор'];
 
   return (
     <div className={css.categories}>
@@ -13,7 +21,7 @@ export function Categories() {
         {categories.map((category, index) => (
           <li
             key={index}
-            onClick={() => setActiveType(index)}
+            onClick={() => dispatch(setCategory(index))}
             className={clsx(css.categoriesBlockTypesList, activeType === index && css.active)}>
             {category}
           </li>

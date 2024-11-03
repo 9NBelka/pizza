@@ -1,13 +1,14 @@
 .pizzaBlockWrapper {
   display: flex;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .pizzaBlock {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
   gap: 30px;
@@ -21,7 +22,7 @@
   padding: 30px 30px;
   /* -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .imageBlock {
@@ -35,7 +36,7 @@
   display: flex;
   color: black;
   font-family: MYRIADPRO-SEMIBOLD;
-  font-size: 22px;
+  font-size: 26px;
   margin: 0;
   margin-top: 15px;
 }
@@ -62,4 +63,31 @@
 .active {
   background-color: orange;
   color: white;
+}
+
+.priceAndButtonBlock {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceBlock {
+  display: flex;
+  color: black;
+  font-family: MYRIADPRO-SEMIBOLD;
+  font-size: 26px;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.buttonPlusInCard {
+  display: flex;
+  background: none;
+  border: none;
+  background-color: orange;
+  border-radius: 30px;
+  padding: 10px;
+  cursor: pointer;
 }
