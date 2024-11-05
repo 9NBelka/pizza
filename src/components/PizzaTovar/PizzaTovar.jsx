@@ -5,6 +5,8 @@ import pizzas from '../../pizza.json';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cartSlice';
 
 /*
 
@@ -52,6 +54,27 @@ export function PizzaTovar() {
   
   */
 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (pizza) => {
+    const selectedSizeIndex = activeSizes[pizza.id];
+    const priceAddition = sizePriceAdditions[selectedSizeIndex];
+    const finalPrice = pizza.price + priceAddition;
+
+    dispatch(
+      addToCart({
+        id: pizza.id,
+        title: pizza.title,
+        imageUrl: pizza.imageUrl,
+        size: pizza.sizes[selectedSizeIndex],
+        price: finalPrice,
+      }),
+    );
+  };
+  // const handleAddToCart = (product) => {
+  //   dispatch(addToCart(product));
+  // };
+
   return (
     <div className={css.pizzaBlockWrapper}>
       <div className={css.pizzaBlock}>
@@ -82,7 +105,12 @@ export function PizzaTovar() {
 
               <div className={css.priceAndButtonBlock}>
                 <p className={css.priceBlock}>{finalPrice} грн.</p>
-                <button className={css.buttonPlusInCard}>
+                {/* <button
+                  onClick={() => dispatch(addToCart(pizza.id))}
+                  className={css.buttonPlusInCard}>
+                  <img src={plus} alt='buttonPlus' />
+                </button> */}
+                <button onClick={() => handleAddToCart(pizza)} className={css.buttonPlusInCard}>
                   <img src={plus} alt='buttonPlus' />
                 </button>
               </div>

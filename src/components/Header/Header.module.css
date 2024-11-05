@@ -1,9 +1,13 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   border-bottom: 1px solid gray;
   padding: 40px 0;
 }
 
 .container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,4 +31,59 @@ h1 {
 
 p {
   color: #7b7b7b;
+}
+
+.headerPriceAndBasketBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerBasketBlocks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+  padding: 5px 20px;
+  border-radius: 30px;
+  height: 20%;
+  gap: 5px;
+}
+
+.headerBasketBlock {
+  display: flex;
+}
+
+.headerBasketBlock h6 {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.headerBasketBlockPrice {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.headerBasketBlock svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+
+.headerBasketLink {
+  text-decoration: none;
+  color: black;
 }
