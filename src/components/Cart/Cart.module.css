@@ -1,0 +1,116 @@
+.cartMainBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  border-top: 1px solid gray;
+}
+
+.cartMainBlockImageAndTitleSize {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  width: 600px;
+}
+
+.cartMainTitle {
+  font-family: MYRIADPRO-SEMIBOLD;
+}
+
+.cartMainBlockImage {
+  display: flex;
+  width: 150px;
+}
+
+.cartMainBlockImage img {
+  width: 100%;
+}
+
+.cartMainBlockText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartMainBlockText p {
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: black;
+  font-weight: normal;
+  font-size: 22px;
+  margin: 0;
+}
+
+.cartTextDescriptionBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* width: 100%; */
+  padding: 10px 0;
+  padding-left: 180px;
+  padding-right: 0px;
+}
+
+.cartTextDescriptionWidth {
+  display: flex;
+  /* width: 100%; */
+}
+
+.cartTextDescription {
+  display: flex;
+  /* width: 600px; */
+  /* width: 100%; */
+}
+
+.cartTextDescription p {
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: black;
+  font-weight: normal;
+  font-size: 22px;
+  margin: 0;
+}
+
+.cartTextDescriptionWidth p {
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: black;
+  font-weight: normal;
+  font-size: 22px;
+  margin: 0;
+}
+
+.cartMainBlockQuantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.cartMainBlockQuantity p {
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: black;
+  font-weight: normal;
+  margin: 0;
+  font-size: 26px;
+}
+
+.cartMainBlockQuantityButton {
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+  background: none;
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 0;
+}
+
+.removeButton svg {
+  color: red;
+  width: 25px;
+  height: 25px;
+}
