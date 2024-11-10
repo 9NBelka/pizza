@@ -7,6 +7,26 @@
     "sizes": [26, 40],
     "price": 229,
     "category": 1,
+    "ingredients": [
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_3_1.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__66_2.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__50_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__49_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_3_1.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__66_2.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__50_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__49_3.webp"
+    ],
+    "ingredientsName": [
+      "Ферментоване тісто",
+      "ананас",
+      "куряче філе мариноване",
+      "сир дор блю",
+      "сир моцарелла",
+      "ананас",
+      "куряче філе мариноване",
+      "сир дор блю"
+    ],
     "rating": 4
   },
   {
@@ -17,6 +37,15 @@
     "sizes": [26, 40],
     "price": 249,
     "category": [1, 3],
+    "ingredients": [
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__49_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__66_2.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__50_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__49_3.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_3_1.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__66_2.webp",
+      "https://yapiko.com.ua/media/catalog/product/options/cache/160x120/_1__49_3.webp"
+    ],
     "rating": 6
   },
   {

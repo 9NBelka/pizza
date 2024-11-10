@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import css from './Cart.module.css';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import { incrementQuantity, decrementQuantity, removeFromCart } from '../../redux/cartSlice';
 import { CiCirclePlus } from 'react-icons/ci';
 import { CiCircleMinus } from 'react-icons/ci';
