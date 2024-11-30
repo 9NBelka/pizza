@@ -1,0 +1,52 @@
+.sliderAndInfoTimeWorkBlocks {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px 60px;
+}
+
+.sliderBlock {
+  width: 40%;
+}
+
+.sliderBlockInfo {
+  width: 50%;
+}
+
+.blockInfoColumn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.blockInfoColumn:first-child {
+  margin-top: 0;
+}
+
+.blockInfoColumn h5 {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: gray;
+}
+
+.blockInfoColumn h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+  font-family: MYRIADPRO-SEMIBOLD;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.blockInfoColumn h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: MYRIADPRO-SEMIBOLD;
+  color: gray;
+  margin-top: 15px;
+}

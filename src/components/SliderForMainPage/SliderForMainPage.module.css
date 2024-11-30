@@ -1,0 +1,19 @@
+.slideBlock {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  outline: none;
+  border-radius: 10px;
+}
+
+.slideBlock img {
+  display: flex;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+}
+
+.sliderr {
+  display: flex;
+  border-radius: 10px;
+}
